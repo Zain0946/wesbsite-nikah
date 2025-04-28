@@ -1,0 +1,90 @@
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fff0f5;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    padding: 50px 20px;
+    background: #ffb6c1;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3em;
+}
+
+header p {
+    margin-top: 10px;
+    font-size: 1.5em;
+}
+
+section {
+    padding: 50px 20px;
+    max-width: 1000px;
+    margin: auto;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #ffb6c1;
+    font-size: 0.9em;
+}
+
+.music-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #ff69b4;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    z-index: 1000;
+}
+
+/* Animasi bunga jatuh */
+@keyframes fall {
+    0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+.flower {
+    position: fixed;
+    top: -10px;
+    width: 20px;
+    height: 20px;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/616/616408.png');
+    background-size: cover;
+    animation: fall linear infinite;
+    z-index: 999;
+}
